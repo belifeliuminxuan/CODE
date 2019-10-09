@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{DEE4EBFD-DED0-42DA-8321-724A667BDED3}</ProjectGuid>
-    <RootNamespace>学生管理系统</RootNamespace>
+    <ProjectGuid>{CC96329A-83D9-4C88-9632-99632A8374F5}</ProjectGuid>
+    <RootNamespace>替换空格</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,11 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
-    <ClCompile Include="student.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="student.h" />
+    <ClCompile Include="change.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
