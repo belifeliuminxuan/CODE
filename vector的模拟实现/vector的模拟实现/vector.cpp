@@ -8,6 +8,7 @@ namespace bit
 	{
 	public:
 		typedef T* iterator;
+<<<<<<< HEAD
 		typedef const T* const_iterator;
 		iterator begin(){ return _start };
 		iterator end(){ return _finish };
@@ -57,5 +58,8 @@ namespace bit
 			_finish = _start + v.size();
 			_endofstorage = _start + v.capacity();
 		}
+=======
+
+>>>>>>> c61bdb49122186b5abc55c1041439dd69accc6bf
 	};
 }
