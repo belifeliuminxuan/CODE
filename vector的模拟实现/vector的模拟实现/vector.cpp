@@ -8,6 +8,10 @@ namespace bit
 	{
 	public:
 		typedef T* iterator;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0c4fe3d419f2d571b1d2531289289980f01e1791
 		typedef const T* const_iterator;
 		iterator begin(){ return _start };
 		iterator end(){ return _finish };
@@ -57,6 +61,7 @@ namespace bit
 			_finish = _start + v.size();
 			_endofstorage = _start + v.capacity();
 		}
+<<<<<<< HEAD
 		vector<T>& operator=(vector<T> v)
 		{
 			swap(v);
@@ -176,5 +181,10 @@ namespace bit
 			iterator _start;
 			iterator _finish;
 			iterator _endofstorage;
+=======
+=======
+
+>>>>>>> c61bdb49122186b5abc55c1041439dd69accc6bf
+>>>>>>> 0c4fe3d419f2d571b1d2531289289980f01e1791
 	};
 }
