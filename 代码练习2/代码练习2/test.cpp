@@ -1,7 +1,7 @@
-#define _CRT_SECURE_NO_WARNINGS 0
-#include <iostream>
-using namespace std;
-#include <vector>
+//#define _CRT_SECURE_NO_WARNINGS 0
+//#include <iostream>
+//using namespace std;
+//#include <vector>
 //struct Sudent
 //{
 //	//成员方法
@@ -68,34 +68,122 @@ using namespace std;
 //	return 0;
 //}
 
-#include<stdio.h>
+//#include<stdio.h>
 
-void BubbleSort(int *a, int len)//
+//void BubbleSort(int *a, int len)//
+//{
+//	int i, j, k, temp;
+//	for (i=0;i<len;i++)
+//	{
+//		for (j = len - 1; j > i; j++)
+//		{
+//			if (a[j - 1] > a[j])
+//			{
+//				temp = a[j - 1];
+//				a[j - 1] = a[j];
+//				a[j] = temp;
+//			}
+//		}
+//		printf("第[%d]步的排序结果为：", i);
+//		for (k = 0; k < len; k++)
+//		{
+//			printf("%d", a[k]);
+//		}
+//		printf("\n");
+//	}
+//}
+//
+//int  main()
+//{
+//	int v[] = { 7,8,4,1,9,12,45,12,5,14,24,22 };
+//	BubbleSort(v, sizeof(v)/sizeof(int));
+//	return 0;
+//}
+
+
+//void 
+
+//
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
+////#define		SIZE 10
+// 
+//void BubbleSort(int *a, int len)
+//{
+//	int i, j, k, temp;
+//	for (i = 0; i < len-1; i++)
+//	{
+//		for (j = len - 1; j > i; j--)
+//		{
+//			if (a[j - 1] > a[j])
+//			{
+//				temp = a[j - 1];
+//				a[j - 1] = a[j];
+//				a[j] = temp;
+//
+//			}
+//		}
+//		printf("第%d步排序结果：", i);
+//		for (k = 0; k < len; k++)
+//		{
+//			printf("%d", a[k]);
+//		}
+//		printf("\n");
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[10], i;
+//	srand(time(NULL));
+//	for (i = 0; i < 10; i++)
+//	{
+//		arr[i] = rand() / 1000 + 100;
+//	}
+//	BubbleSort(arr, 10);
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d", arr[i]);
+//	}
+//	printf("\n");
+//	return 0;
+//}
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void SelectionSort(int *arr, int len)
 {
-	int i, j, k, temp;
-	for (i=0;i<len;i++)
+	int i, j, k, h;
+	int temp;
+	for (i = 0; i < len - 1; i++)
 	{
-		for (j = len - 1; j > i; j++)
+		k = i;
+		for (j = i + 1; j < len; j++)
 		{
-			if (a[j - 1] > a[j])
+			if (arr[j] < arr[k])
 			{
-				temp = a[j - 1];
-				a[j - 1] = a[j];
-				a[j] = temp;
+				k = j;
 			}
 		}
-		printf("第[%d]步的排序结果为：", i);
-		for (k = 0; k < len; k++)
+		if (k != i)
 		{
-			printf("%d", a[k]);
+			temp = arr[i];
+			arr[i] = arr[k];
+			arr[k] = temp;
+
+
+		}
+		for (h = 0; h < len; h++)
+		{
+			printf("%d", arr[h]);
 		}
 		printf("\n");
 	}
 }
-
-int  main()
+int main()
 {
-	int v[] = { 7,8,4,1,9,12,45,12,5,14,24,22 };
-	BubbleSort(v, sizeof(v)/sizeof(int));
+
 	return 0;
 }
