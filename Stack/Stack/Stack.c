@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS 0
 #include <stdio.h>
 #include <stdlib.h>
 #include <Windows.h>
@@ -37,7 +38,7 @@ int Pop(SqStack* S)
 	if (S->top == S->base) return -1;
 	int e = *(S->top-1);
 	S->top--;
-	printf("%d\n", e);
+	printf("The element at the top of the stack is[%d]\n", e);
 	return 0;
 }
 int	PrintStack(SqStack *S)
@@ -77,27 +78,26 @@ int main()
 {
 	SqStack S;
 	InitStack(&S);
-	Push(&S, 1);
-	Push(&S, 2);
-	Push(&S, 3);
-	Push(&S, 4);
-	Push(&S, 5);
-	Push(&S, 6);
-	//PrintStack(&S);
-	/*printf("_____________________________\n");
-	Pop(&S);
-	Pop(&S);
-	Pop(&S);
-	printf("_____________________________\n");
-	PrintStack(&S);
-	printf("_____________________________\n");*/
-	Pop(&S);
-	Pop(&S);
-	Pop(&S);
-	Pop(&S);
-	Pop(&S);
-	Pop(&S);
-	IsEmpty(&S);
+	for (int i = 0; i < MAXSIZE; ++i)
+	{
+		int elem = 0;
+		printf("Input elements:\n");
+		scanf("%d", &elem);
+		if (S.top-S.base==S.stacksize)
+		{
+			printf("The stack is full.\n");
+			break;
+		}
+		else if (elem != -1)
+		{
+			Push(&S, elem);
+		}
+		else
+		{
+			Pop(&S);
+			break;
+		}
+	}
 	system("pause");
 	return 0;
 }
