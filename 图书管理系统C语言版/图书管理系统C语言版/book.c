@@ -65,7 +65,18 @@ SListNode* SListFind(SListNode* phead, int x)
 	{
 		if (tmp->data._BookNumber == x)
 		{
+
+			printf("%d\n", tmp->data._BookNumber);
+			printf("%s\n", tmp->data._BookName);
+			printf("%s\n", tmp->data._BookAuther);
+			printf("%s\n", tmp->data._BookPress);
+			printf("%s\n", tmp->data._BookClassification);
+			printf("%s\n", tmp->data._BookISBN);
 			return tmp;
+		}
+		else
+		{
+			printf("Non-existent");
 		}
 	}
 	return NULL;
@@ -91,7 +102,6 @@ void SListPrint(SListNode* phead)
 	SListNode* tmp;
 	for (tmp = phead; tmp; tmp = tmp->next)
 	{
-
 		printf("BookNumber:[%d]\n", tmp->data._BookNumber);
 		printf("BookName:[%s]\n", tmp->data._BookName);
 		printf("BookAuther:[%s]\n", tmp->data._BookAuther);
@@ -101,15 +111,51 @@ void SListPrint(SListNode* phead)
 	}
 }
 
-int Add()
+void BookManagement()
 {
-	int flag =1;
-	int pflag = 1;
+	int choose =0;
 	SListNode* pphead1;
 	InitSList(&pphead1);
+	printf("Welcome to the library management system\n");
+	printf("1.BookAdd\n");
+	printf("2.BookFind\n");
+	printf("3.BookDel\n");
+	printf("4.PrintBookInfo\n");
+	scanf("%d", &choose);
+	switch (choose)
+	{
+		char str[2] = "y";
+	case 1:
+	{
+		
+		while (str == "y")
+		{
+			SListPushFront(&pphead1);
+			printf("Continue to add?(y/n)\n");
+			scanf("%s", &str);
+		}	
+	}
+	break;
+	/*case 2:
+	{
+		break;
+	}
+	case 3:
+	{
+
+		break;
+	}
+	case 4:
+	{
+
+	}*/
+	}
+}
+	/*int flag =1;
+	int pflag = 1;
 	while (flag == 1)
 	{
-		SListPushFront(&pphead1);
+
 		printf("Continue to add?   1 continue Any key exit\n");
 		scanf("%d", &flag);
 	}
@@ -119,21 +165,24 @@ int Add()
 	{
 		SListPrint(pphead1);
 	}
-	else
-	{
-		return 0;
-	}
-	return 0;
-}
 
+}
+	void Find()
+{
+		int x = 0;
+		SListNode* res = BookAdd();
+		printf("Please enter the serial number of the search:\n");
+		scanf("%d", &x);
+		SListFind(res, x);
+
+}
+*/
 int main()
 {
 	/*SListNode* pphead;
 	InitSList(&pphead);
-	SListPushFront(&pphead);
-	SListPrint(pphead);*/
-	Add();
-
+	SListPushFront(&pphead);*/
+	BookManagement();
 
 
 	system("pause");
